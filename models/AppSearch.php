@@ -5,6 +5,7 @@ namespace app\models;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\App;
+use yii\data\Pagination;
 
 /**
  * AppSearch represents the model behind the search form of `app\models\App`.
@@ -47,6 +48,9 @@ class AppSearch extends App
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pageSize' => 2,
+            ]
         ]);
 
         $this->load($params, $formName);
