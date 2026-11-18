@@ -43,6 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'course_id',
                 'value' => $model->course->name,
+                'filter' => false
             ],
             'start',
             'pament_option',
