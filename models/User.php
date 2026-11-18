@@ -120,4 +120,8 @@ class User extends \yii\db\ActiveRecord Implements IdentityInterface
         return $this->password === $password;
     }
 
+    //Проверка на админа
+    public function isAdmin() {
+        return (bool) $this -> admin;
+    }
 }
