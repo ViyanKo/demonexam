@@ -86,3 +86,18 @@ a.desc:after {
 .form-group {
     margin-bottom: 1rem;
 }
+
+
+/* кусьминова
+
+*/
+
+
+@font-face {
+  font-family: "Lobster-Regular";
+  src: url("/web/fonts/Lobster-Regular.ttf");
+}
+
+.logo {
+    font-family: "Lobster-Regular";
+}
