@@ -90,6 +90,7 @@ class AppController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'paymentOptions' => $this -> getPaymentOptions()
         ]);
     }
 
@@ -141,5 +142,16 @@ class AppController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+
+    //кусьминова Выбор способа оплаты из выпадающего списка
+
+    public function getPaymentOptions() {
+        $paymentOptions = [
+            "Наличными" => "Наличными",
+            "СБП" => "СБП"
+        ];
+        return $paymentOptions;
     }
 }
