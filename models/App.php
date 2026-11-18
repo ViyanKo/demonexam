@@ -84,4 +84,11 @@ class App extends \yii\db\ActiveRecord
         return $this->hasOne(User::class, ['id' => 'user_id']);
     }
 
+    //кусьминова Текст для всплывающего сообщения
+
+        public function getInfo()
+    {
+        return "{$this -> user -> full_name} : {$this -> course -> name}, {$this -> start} ({$this->status})";
+    }
+
 }
