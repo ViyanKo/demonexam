@@ -40,9 +40,6 @@ a.desc:after {
     border-bottom-width: 0;
 }
 
-.grid-view th {
-    white-space: nowrap;
-}
 
 .hint-block {
     display: block;
@@ -101,4 +98,12 @@ a.desc:after {
 .logo {
     font-family: "Lobster-Regular";
     color: #ffcc00;
+}
+
+/*кусьминова kartik*/
+
+
+.grid-view th {
+    word-break: normal;
+    overflow-wrap: anywhere;
 }
