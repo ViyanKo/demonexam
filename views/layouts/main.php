@@ -12,6 +12,7 @@ use yii\bootstrap5\NavBar;
 
 AppAsset::register($this);
 
+$this->registerCssFile("@web/css/animate.min.css");
 $this->registerCsrfMetaTags();
 $this->registerMetaTag(['charset' => Yii::$app->charset], 'charset');
 $this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width, initial-scale=1, shrink-to-fit=no']);
@@ -34,7 +35,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     NavBar::begin([
         'brandLabel' => Html::img('@web/images/logo.png', ['alt'=>'My logo', 'class'=> 'me-1', 'width' => 65]) . "<span class='logo'>" . Yii::$app->name . "</span>",
         'brandUrl' => Yii::$app->homeUrl,
-        'options' => ['class' => 'navbar-expand-md navbar-dark bg-primary fixed-top']
+        'options' => ['class' => 'navbar-expand-md navbar-dark bg-primary fixed-top'],
+        'brandOptions' => ['class' => 'animate__animated animate__bounce'],
     ]);
 
     $itemAppLabel = "";
