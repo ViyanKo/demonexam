@@ -4,9 +4,11 @@ namespace app\controllers;
 
 use app\models\App;
 use app\models\AppSearch;
+use app\models\Course;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * AppController implements the CRUD actions for App model.
@@ -90,7 +92,8 @@ class AppController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-            'paymentOptions' => $this -> getPaymentOptions()
+            'paymentOptions' => $this -> getPaymentOptions(),
+            'courses' => $this -> getCourses()
         ]);
     }
 
@@ -153,5 +156,13 @@ class AppController extends Controller
             "СБП" => "СБП"
         ];
         return $paymentOptions;
+    }
+
+    //кусьминова Выпадающий список курсов
+
+        public function getCourses() {
+        $courses = Course::find()->orderBy("name")->all();
+        $result =ArrayHelper::map($courses, 'id', 'name');
+        return ($result);
     }
 }
