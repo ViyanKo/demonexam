@@ -1,5 +1,6 @@
 <?php
 
+use PhpParser\Node\Stmt\Label;
 use yii\helpers\Html;
 use yii\bootstrap5\ActiveForm;
 
@@ -12,8 +13,8 @@ use yii\bootstrap5\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'user_id')->textInput() ?>
-
+    <?= $form->field($model, 'user_id')->textInput(["type" => "hidden", "value" => Yii::$app->user->identity->id])->label(false) ?>
+    
     <?= $form->field($model, 'course_id')->textInput() ?>
 
     <?= $form->field($model, 'start')->textInput() ?>
