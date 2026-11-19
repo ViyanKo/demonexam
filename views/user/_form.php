@@ -11,7 +11,7 @@ use yii\widgets\MaskedInput;
 
 <div class="user-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['errorCssClass'=>'is-invalid animate__animated animate__bounce']); ?>
 
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
