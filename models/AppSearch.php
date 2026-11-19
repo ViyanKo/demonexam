@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\App;
@@ -43,6 +44,12 @@ class AppSearch extends App
     public function search($params, $formName = null)
     {
         $query = App::find();
+
+        //Юзер видит только свои заявки
+        //Админ все
+        if (!Yii::$app->user->identity->isAdmin()){
+        $query->andWhere(['user_id'=>Yii::$app->user->identity->id]);
+        }
 
         // add conditions that should always apply here
 

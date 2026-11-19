@@ -19,7 +19,7 @@ $this->title = (Yii::$app->user->identity->isAdmin()) ? "Панель управ
     
         <?php if(!Yii::$app->user->isGuest && !Yii::$app->user->identity->isAdmin()): ?>
         <p>
-            <?= Html::a('Create App', ['create'], ['class' => 'btn btn-success']) ?>
+            <?= Html::a('Новая заявка', ['create'], ['class' => 'btn btn-success']) ?>
         </p>
         
         <?php endif?>
